@@ -24,6 +24,7 @@ console.log(age);
 let ticketPrice;
 let discount;
 
+
 const isKmANumber = isNaN(kilometers);
 const isAgeANumber = isNaN(age);
 
@@ -58,16 +59,22 @@ if (!isKmANumber && !isAgeANumber)
     
     
     ticketPrice = ticketPrice.toFixed(2);
-    console.log("Prezzo aggiustato dopo la virgola " + ticketPrice + "€");
-
+    ticketPrice = ticketPrice + "€";
+    
+    console.log("Prezzo aggiustato dopo la virgola " + ticketPrice);
+    
 
 
 } 
 
 else 
 {
-    console.log("I valori inseriti non sono idonei :c ");   
+    console.log("I valori inseriti non sono idonei :c ");
+    ticketPrice = "I valori inseriti non sono idonei :c";
+
 }
+
+document.getElementById("demo").innerHTML = ticketPrice;
 
 
 
