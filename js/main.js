@@ -21,14 +21,14 @@ console.log(kilometers);
 let  age = prompt("Inserisci la tua età");
 console.log(age);
 
-let ticketPrice = 0;
-
+let ticketPrice;
+let discount;
 
 const isKmANumber = isNaN(kilometers);
 const isAgeANumber = isNaN(age);
 
-console.log(isKmANumber);
-console.log(isAgeANumber);
+console.log("I kilometri sono una parola?  " + isKmANumber);
+console.log("L'età è una parola? " + isAgeANumber);
 
 if (!isKmANumber && !isAgeANumber) 
 {
@@ -36,28 +36,29 @@ if (!isKmANumber && !isAgeANumber)
     age = parseInt(age);
 
     ticketPrice = kilometers * 0.21 ;
-    console.log(ticketPrice);
+    console.log("Prezzo intero biglietto " + ticketPrice);
 
     if (age < 18) 
         {
-            ticketPrice = ticketPrice * 20 / 100;
+            discount = ticketPrice * 20 / 100;
+            ticketPrice = ticketPrice - discount;
             
-            console.log(ticketPrice);
+            console.log("Prezzo scontato del 20% " + ticketPrice);
 
             
         } 
     else if (age > 65)
         {
-            ticketPrice = ticketPrice * 40 / 100;
-            
-            console.log(ticketPrice);
+            discount = ticketPrice * 40 / 100;
+            ticketPrice = ticketPrice - discount;
+            console.log("Prezzo scontato del 40% " + ticketPrice);
             
         }
 
     
     
-    let ticketPrice = ticketPrice.toFixed(2);
-    console.log(ticketPrice);
+    ticketPrice = ticketPrice.toFixed(2);
+    console.log("Prezzo aggiustato dopo la virgola " + ticketPrice + "€");
 
 
 
