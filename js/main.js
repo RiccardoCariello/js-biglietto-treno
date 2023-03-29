@@ -21,7 +21,7 @@ console.log(kilometers);
 let  age = prompt("Inserisci la tua età");
 console.log(age);
 
-let ticketPrice;
+let ticketPrice = 0;
 
 
 const isKmANumber = isNaN(kilometers);
@@ -35,20 +35,29 @@ if (!isKmANumber && !isAgeANumber)
     kilometers = parseInt(kilometers);
     age = parseInt(age);
 
-    ticketPrice = ticketPrice * 0.21 ;
+    ticketPrice = kilometers * 0.21 ;
     console.log(ticketPrice);
 
     if (age < 18) 
-    {
-        
-        
-    } 
+        {
+            ticketPrice = ticketPrice * 20 / 100;
+            
+            console.log(ticketPrice);
+
+            
+        } 
     else if (age > 65)
         {
-        
+            ticketPrice = ticketPrice * 40 / 100;
+            
+            console.log(ticketPrice);
+            
         }
 
-
+    
+    
+    let ticketPrice = ticketPrice.toFixed(2);
+    console.log(ticketPrice);
 
 
 
