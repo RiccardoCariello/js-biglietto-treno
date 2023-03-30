@@ -33,7 +33,7 @@ console.log("L'età è una parola? " + isAgeANumber);
 
 if (!isKmANumber && !isAgeANumber) 
 {
-    kilometers = parseInt(kilometers);
+    kilometers = parseFloat(kilometers);
     age = parseInt(age);
 
     ticketPrice = kilometers * 0.21 ;
