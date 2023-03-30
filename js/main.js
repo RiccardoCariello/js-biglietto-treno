@@ -24,14 +24,13 @@ console.log(age);
 let ticketPrice;
 let discount;
 
+const isKmANumber = !isNaN(kilometers);
+const isAgeANumber = !isNaN(age);
 
-const isKmANumber = isNaN(kilometers);
-const isAgeANumber = isNaN(age);
+console.log("I kilometri sono un numero?  " + isKmANumber);
+console.log("L'età è un numero? " + isAgeANumber);
 
-console.log("I kilometri sono una parola?  " + isKmANumber);
-console.log("L'età è una parola? " + isAgeANumber);
-
-if (!isKmANumber && !isAgeANumber) 
+if (isKmANumber && isAgeANumber) 
 {
     kilometers = parseFloat(kilometers);
     age = parseInt(age);
@@ -40,38 +39,28 @@ if (!isKmANumber && !isAgeANumber)
     console.log("Prezzo intero biglietto " + ticketPrice);
 
     if (age < 18) 
-        {
-            discount = ticketPrice * 20 / 100;
-            ticketPrice = ticketPrice - discount;
-            
-            console.log("Prezzo scontato del 20% " + ticketPrice);
-
-            
-        } 
+    {
+        discount = ticketPrice * 20 / 100;
+        ticketPrice = ticketPrice - discount;
+        
+        console.log("Prezzo scontato del 20% " + ticketPrice);
+    } 
     else if (age > 65)
-        {
-            discount = ticketPrice * 40 / 100;
-            ticketPrice = ticketPrice - discount;
-            console.log("Prezzo scontato del 40% " + ticketPrice);
-            
-        }
-
-    
+    {
+        discount = ticketPrice * 40 / 100;
+        ticketPrice = ticketPrice - discount;
+        console.log("Prezzo scontato del 40% " + ticketPrice);
+    }
     
     ticketPrice = ticketPrice.toFixed(2);
     ticketPrice = ticketPrice + "€";
     
     console.log("Prezzo aggiustato dopo la virgola " + ticketPrice);
     
-
-
-} 
-
-else 
+} else 
 {
     console.log("I valori inseriti non sono idonei :c ");
     ticketPrice = "I valori inseriti non sono idonei :c";
-
 }
 
 document.getElementById("demo").innerHTML = ticketPrice;
